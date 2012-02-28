@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, Contents_convert_androidActivity!</string>
+    <string name="app_name">Contents_convert_android</string>
+    <string name="download">Download</string>
+    <string name="app_title">ContentsConverter</string>
+    <string name="menu_request_list">リクエスト一覧</string>
+    <string name="menu_config">設定</string>
+
+</resources>

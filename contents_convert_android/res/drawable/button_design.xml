@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 押したときの設定  -->
+    <item android:state_pressed="true"><shape android:shape="rectangle">
+            <corners android:radius="5dip" />
+            <gradient android:angle="270" android:endColor="#8888B5" android:startColor="#C5C5E5" />
+            <padding android:bottom="9dip" android:left="10dip" android:right="10dip" android:top="11dip" />
+            <stroke android:width="0.5dip" android:color="#333333" />
+        </shape>
+    </item>
+    
+    <!--  //クリックしたときの設定  -->
+    <item android:state_focused="true"><shape android:shape="rectangle">
+            <corners android:radius="5dip" />
+            <gradient android:angle="270" android:endColor="#8888B5" android:startColor="#C5C5E5" />
+            <padding android:bottom="9dip" android:left="10dip" android:right="10dip" android:top="11dip" />
+            <stroke android:width="0.5dip" android:color="#333333" />
+        </shape>
+    </item>
+    
+    <item>
+        <!-- //何も条件がない通常の設定 -->
+		<shape android:shape="rectangle">
+            <corners android:radius="5dip" />
+            <gradient android:angle="270" android:endColor="#888888" android:startColor="#BFBFBF" />
+            <padding android:bottom="10dip" android:left="10dip" android:right="10dip" android:top="10dip" />
+            <stroke android:width="0.5dip" android:color="#333333" />
+        </shape>
+    </item>
+    
+    <item android:state_enabled="false">
+        <!-- //無効化時の設定 -->
+		<shape android:shape="rectangle">
+            <corners android:radius="5dip" />
+            <gradient android:angle="270" android:endColor="#444444" android:startColor="#888888" />
+            <padding android:bottom="10dip" android:left="10dip" android:right="10dip" android:top="10dip" />
+            <stroke android:width="0.5dip" android:color="#333333" />
+        </shape>
+    </item>
+    
+</selector>
