@@ -29,7 +29,7 @@ public class ContentListParserTest extends TestCase{
         DummyContentListLoadHandler handler = new DummyContentListLoadHandler();
         
         String testXml = "<ContentList>"
-            + "<Content id=\"100\" status=\"0\">testTitle</Content>"
+            + "<Content id=\"100\" status=\"0\" rule=\"aaa\">testTitle</Content>"
             + "</ContentList>";
         InputStream is = new ByteArrayInputStream(testXml.getBytes());
         
@@ -55,8 +55,8 @@ public class ContentListParserTest extends TestCase{
         DummyContentListLoadHandler handler = new DummyContentListLoadHandler();
         
         String testXml = "<ContentList>"
-            + "<Content id=\"100\" status=\"0\">testTitle</Content>"
-            + "<Content id=\"101\" status=\"0\">testTitle2</Content>"
+            + "<Content id=\"100\" status=\"0\" rule=\"aaa\">testTitle</Content>"
+            + "<Content id=\"101\" status=\"0\" rule=\"aaa\">testTitle2</Content>"
             + "</ContentList>";
         InputStream is = new ByteArrayInputStream(testXml.getBytes());
         
