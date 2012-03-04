@@ -92,7 +92,7 @@ public class ContentListParser {
                 }
                 
                 if(rule == null) {
-                    throw new IOException("content/@statusが定義されていません。");
+                    throw new IOException("content/@ruleが定義されていません。");
                 }
                 
                 currentContent = new Content();
