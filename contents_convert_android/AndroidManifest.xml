@@ -21,7 +21,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".StackRequestActivity">
+            android:name=".activity.RequestQueueActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <action android:name="android.intent.action.SENDTO" />
