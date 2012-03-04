@@ -29,6 +29,8 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        </application>
+        <activity android:name=".activity.RequestQueueListActivity" android:label="@string/request_queue_list_label"></activity>
+        <service android:name=".service.RequestQueuePostService" ></service>
+    </application>
     
 </manifest>

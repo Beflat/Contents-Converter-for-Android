@@ -3,7 +3,10 @@ package net.urban_theory.contents_convert;
 
 import java.util.ArrayList;
 
+import net.urban_theory.contents_convert.activity.RequestQueueListActivity;
+
 import android.app.ListActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -58,8 +61,8 @@ public class Contents_convert_androidActivity extends ListActivity {
         
         switch(item.getItemId()) {
         case R.id.menu_request_list:
-            toast = Toast.makeText(this, "Show request list", Toast.LENGTH_LONG);
-            toast.show();
+            Intent intent = new Intent(getApplicationContext(), RequestQueueListActivity.class);
+            startActivity(intent);
             consumed = true;
             break;
             
