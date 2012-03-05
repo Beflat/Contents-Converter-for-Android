@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+	android:title="@string/title_preference">
+    <CheckBoxPreference android:key="pref_auto_send_request" android:summaryOff="@string/pref_auto_send_request" android:summaryOn="@string/pref_auto_send_request" android:title="@string/pref_auto_send_request" android:defaultValue="false"/>
+    <CheckBoxPreference android:key="pref_auto_sync_content" android:title="@string/pref_sync_content" android:defaultValue="false"/>
+	
+	
+	
+</PreferenceScreen>

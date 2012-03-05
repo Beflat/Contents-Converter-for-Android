@@ -12,5 +12,8 @@
     <string name="request_queue_list_label">リクエスト送信キュー</string>
     <string name="menu_toggle_auto_send_request_on">自動送信ON</string>
     <string name="menu_toggle_auto_send_request_off">自動送信OFF</string>
+    <string name="title_preference">設定画面</string>
+    <string name="pref_auto_send_request">リクエストを定期的に送信する</string>
+    <string name="pref_sync_content">コンテンツ一覧を定期的に受信する</string>
 
 </resources>

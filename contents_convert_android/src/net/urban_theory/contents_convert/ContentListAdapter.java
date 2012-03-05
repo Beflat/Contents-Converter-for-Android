@@ -2,6 +2,8 @@ package net.urban_theory.contents_convert;
 
 import java.util.List;
 
+import net.urban_theory.contents_convert.entity.Content;
+
 import android.content.Context;
 import android.content.res.ColorStateList;
 import android.graphics.Color;

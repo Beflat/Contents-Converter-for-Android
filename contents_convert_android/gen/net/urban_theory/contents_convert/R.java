@@ -15,14 +15,13 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int btn_download=0x7f060002;
-        public static final int content_title=0x7f060001;
-        public static final int menu_config=0x7f060006;
-        public static final int menu_request_list=0x7f060005;
-        public static final int menu_toggle_auto_send_request=0x7f060007;
-        public static final int request_status=0x7f060004;
-        public static final int request_url=0x7f060003;
-        public static final int rule_title=0x7f060000;
+        public static final int btn_download=0x7f070002;
+        public static final int content_title=0x7f070001;
+        public static final int menu_config=0x7f070006;
+        public static final int menu_request_list=0x7f070005;
+        public static final int request_status=0x7f070004;
+        public static final int request_url=0x7f070003;
+        public static final int rule_title=0x7f070000;
     }
     public static final class layout {
         public static final int item_row=0x7f030000;
@@ -31,19 +30,25 @@ public final class R {
         public static final int request_queue_row=0x7f030003;
     }
     public static final class menu {
-        public static final int main_menu=0x7f050000;
+        public static final int main_menu=0x7f060000;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int app_title=0x7f040003;
-        public static final int download=0x7f040002;
-        public static final int hello=0x7f040000;
-        public static final int menu_config=0x7f040005;
-        public static final int menu_request_list=0x7f040004;
-        public static final int menu_toggle_auto_send_request_off=0x7f04000a;
-        public static final int menu_toggle_auto_send_request_on=0x7f040009;
-        public static final int request_queue_item_name_sent=0x7f040007;
-        public static final int request_queue_item_name_unsent=0x7f040006;
-        public static final int request_queue_list_label=0x7f040008;
+        public static final int app_name=0x7f050001;
+        public static final int app_title=0x7f050003;
+        public static final int download=0x7f050002;
+        public static final int hello=0x7f050000;
+        public static final int menu_config=0x7f050005;
+        public static final int menu_request_list=0x7f050004;
+        public static final int menu_toggle_auto_send_request_off=0x7f05000a;
+        public static final int menu_toggle_auto_send_request_on=0x7f050009;
+        public static final int pref_auto_send_request=0x7f05000c;
+        public static final int pref_sync_content=0x7f05000d;
+        public static final int request_queue_item_name_sent=0x7f050007;
+        public static final int request_queue_item_name_unsent=0x7f050006;
+        public static final int request_queue_list_label=0x7f050008;
+        public static final int title_preference=0x7f05000b;
+    }
+    public static final class xml {
+        public static final int pref=0x7f040000;
     }
 }

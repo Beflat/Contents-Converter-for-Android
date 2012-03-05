@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import net.urban_theory.contents_convert.Parser.ContentListParser;
+import net.urban_theory.contents_convert.entity.Content;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.util.Log;

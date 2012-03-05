@@ -54,7 +54,6 @@ public class RequestQueuePostService extends IntentService {
 
             sendRequest(list);
             
-            //全て送信して、全てがうまく行ったのであれば全て削除する。
             clearRequestQueue();
 
         } catch (Exception e) {
@@ -91,14 +90,6 @@ public class RequestQueuePostService extends IntentService {
             .path("/api/request/post");
         
         String uri = uriBuilder.toString();
-        
-//        HttpClient client = new DefaultHttpClient();
-//        HttpParams httpParams = client.getParams();
-//        HttpConnectionParams.setConnectionTimeout(httpParams, 1000);
-//        HttpConnectionParams.setSoTimeout(httpParams, 1000);
-//        
-//        HttpPost httpRequest = new HttpPost();
-//        httpRequest.
         
         HttpClient client = new DefaultHttpClient();
         HttpPost httpPost = new HttpPost(uri);

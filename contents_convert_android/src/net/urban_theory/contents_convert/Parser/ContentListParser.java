@@ -5,7 +5,7 @@ import java.io.InputStream;
 
 import junit.framework.Assert;
 
-import net.urban_theory.contents_convert.Content;
+import net.urban_theory.contents_convert.entity.Content;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;

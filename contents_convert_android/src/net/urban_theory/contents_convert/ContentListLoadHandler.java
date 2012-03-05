@@ -3,6 +3,7 @@ package net.urban_theory.contents_convert;
 import java.util.ArrayList;
 
 import net.urban_theory.contents_convert.Parser.LoadHandler;
+import net.urban_theory.contents_convert.entity.Content;
 
 public class ContentListLoadHandler extends LoadHandler<Content> {
 

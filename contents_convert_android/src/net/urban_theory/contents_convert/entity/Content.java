@@ -1,4 +1,4 @@
-package net.urban_theory.contents_convert;
+package net.urban_theory.contents_convert.entity;
 
 public class Content {
 
