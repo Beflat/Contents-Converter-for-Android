@@ -1,14 +1,18 @@
 package net.urban_theory.contents_convert.service;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
 import net.urban_theory.contents_convert.data.DataLoaderException;
+import net.urban_theory.contents_convert.data.DataWriterException;
 import net.urban_theory.contents_convert.data.RequestQueueDataLoader;
+import net.urban_theory.contents_convert.data.RequestQueueDataWriter;
 import net.urban_theory.contents_convert.entity.RequestQueueItem;
 import net.urban_theory.contents_convert.util.FileUtil;
 
@@ -25,6 +29,7 @@ import org.apache.http.protocol.HTTP;
 import android.app.IntentService;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.util.Log;
 
 public class RequestQueuePostService extends IntentService {
@@ -36,13 +41,22 @@ public class RequestQueuePostService extends IntentService {
         threadName = name;
     }
 
+    public RequestQueuePostService() {
+        super("RequestQueuePostService");
+    }
+    
     @Override
     protected void onHandleIntent(Intent intent) {
         
         try {
             ArrayList<RequestQueueItem> list = loadRequestQueueItems();
-            
+            Log.d("cc-android", "Service Started");
+
             sendRequest(list);
+            
+            //全て送信して、全てがうまく行ったのであれば全て削除する。
+            clearRequestQueue();
+
         } catch (Exception e) {
             Log.d("cc-android", e.getMessage());
         }
@@ -50,7 +64,7 @@ public class RequestQueuePostService extends IntentService {
 
     
     private ArrayList<RequestQueueItem> loadRequestQueueItems() throws IOException, DataLoaderException {
-        String filePath = "";
+        String filePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ContentsConvert/requests2.json";
         
         ArrayList<RequestQueueItem> list = new ArrayList<RequestQueueItem>();
         File file = new File(filePath);
@@ -91,30 +105,34 @@ public class RequestQueuePostService extends IntentService {
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         
         for(RequestQueueItem item : list) {
-            
-            if(item.getStatus() == RequestQueueItem.STATUS_SENT) {
-                continue;
-            }
-            
             params.add(new BasicNameValuePair("urls[]", item.getUrl()));
         }
         
+        
         httpPost.setEntity(new UrlEncodedFormEntity(params, HTTP.UTF_8));
+        Log.d("cc-android", "Request: " + httpPost.toString());
         
         HttpResponse response = client.execute(httpPost);
         
         if(response.getStatusLine().getStatusCode() != 200) {
-            throw new IOException("リクエスト結果のHTTPコード異常：" + Integer.toString(response.getStatusLine().getStatusCode()) );
+            throw new IOException("リクエスト結果のHTTPコード異常：" + Integer.toString(response.getStatusLine().getStatusCode()) + "\nRequest: " + httpPost.toString() );
         }
         
-        //とてもきわどいやり方...
-        for(RequestQueueItem item : list) {
-            if(item.getStatus() == RequestQueueItem.STATUS_SENT) {
-                continue;
-            }
-            
-            
-        }
+    }
+    
+    
+    private void clearRequestQueue() throws UnsupportedEncodingException, FileNotFoundException, IOException, DataWriterException{
+        Log.d("cc-android", "clear queue.");
+        ArrayList<RequestQueueItem> list = new ArrayList<RequestQueueItem>();
         
+        String filePath = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ContentsConvert/requests2.json";
+        
+        BufferedWriter bw = FileUtil.getBufferedWriterFromFilePath(filePath);
+        RequestQueueDataWriter writer = new RequestQueueDataWriter(bw);
+        
+        writer.setItems(list);
+        writer.write();
+        
+        bw.close();
     }
 }

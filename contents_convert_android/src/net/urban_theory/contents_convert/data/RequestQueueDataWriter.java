@@ -24,7 +24,7 @@ public class RequestQueueDataWriter {
     }
     
     
-    public void write() throws DataLoaderException, IOException {
+    public void write() throws DataWriterException, IOException {
         try {
             
             JSONObject rootObject = new JSONObject();
@@ -46,7 +46,7 @@ public class RequestQueueDataWriter {
             Log.d("cc-android", rootObject.toString(4));
             
         } catch(JSONException jsonException) {
-            throw new DataLoaderException(jsonException.getMessage());
+            throw new DataWriterException(jsonException.getMessage());
         }
     }
     

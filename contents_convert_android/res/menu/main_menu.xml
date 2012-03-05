@@ -2,4 +2,5 @@
     <menu xmlns:android="http://schemas.android.com/apk/res/android">
         <item android:id="@+id/menu_request_list" android:title="@string/menu_request_list" android:numericShortcut="1"></item>
         <item android:id="@+id/menu_config" android:title="@string/menu_config" android:numericShortcut="2"></item>
+        <item android:id="@+id/menu_toggle_auto_send_request" android:title="@string/menu_toggle_auto_send_request_on"></item>
     </menu>

@@ -19,6 +19,7 @@ public final class R {
         public static final int content_title=0x7f060001;
         public static final int menu_config=0x7f060006;
         public static final int menu_request_list=0x7f060005;
+        public static final int menu_toggle_auto_send_request=0x7f060007;
         public static final int request_status=0x7f060004;
         public static final int request_url=0x7f060003;
         public static final int rule_title=0x7f060000;
@@ -39,6 +40,8 @@ public final class R {
         public static final int hello=0x7f040000;
         public static final int menu_config=0x7f040005;
         public static final int menu_request_list=0x7f040004;
+        public static final int menu_toggle_auto_send_request_off=0x7f04000a;
+        public static final int menu_toggle_auto_send_request_on=0x7f040009;
         public static final int request_queue_item_name_sent=0x7f040007;
         public static final int request_queue_item_name_unsent=0x7f040006;
         public static final int request_queue_list_label=0x7f040008;
