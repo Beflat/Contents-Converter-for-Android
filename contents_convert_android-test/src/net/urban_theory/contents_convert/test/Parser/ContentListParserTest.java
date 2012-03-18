@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import junit.framework.Assert;
 import junit.framework.TestCase;
-import net.urban_theory.contents_convert.Content;
 import net.urban_theory.contents_convert.Parser.ContentListParser;
+import net.urban_theory.contents_convert.entity.Content;
 import net.urban_theory.contents_convert.test.Parser.TestTool.DummyContentListLoadHandler;
 
 public class ContentListParserTest extends TestCase{

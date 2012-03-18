@@ -2,8 +2,8 @@ package net.urban_theory.contents_convert.test.Parser.TestTool;
 
 import java.util.ArrayList;
 
-import net.urban_theory.contents_convert.Content;
 import net.urban_theory.contents_convert.Parser.LoadHandler;
+import net.urban_theory.contents_convert.entity.Content;
 
 public class DummyContentListLoadHandler extends LoadHandler<Content>{
 
