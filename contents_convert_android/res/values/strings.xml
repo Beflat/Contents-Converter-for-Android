@@ -15,5 +15,8 @@
     <string name="title_preference">設定画面</string>
     <string name="pref_auto_send_request">リクエストを定期的に送信する</string>
     <string name="pref_sync_content">コンテンツ一覧を定期的に受信する</string>
-
+    <string name="start_download_content">ダウンロード中...</string>
+    <string name="error_invalid_content_id">無効なコンテンツID</string>
+    <string name="title_download_success">ダウンロードが完了しました。</string>
+    <string name="title_download_error">ダウンロードに失敗しました。</string>
 </resources>

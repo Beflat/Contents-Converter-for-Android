@@ -15,27 +15,31 @@ public final class R {
         public static final int ic_launcher=0x7f020001;
     }
     public static final class id {
-        public static final int btn_download=0x7f070002;
-        public static final int content_title=0x7f070001;
-        public static final int menu_config=0x7f070006;
-        public static final int menu_request_list=0x7f070005;
-        public static final int request_status=0x7f070004;
-        public static final int request_url=0x7f070003;
-        public static final int rule_title=0x7f070000;
+        public static final int btn_download=0x7f080004;
+        public static final int content_title=0x7f080003;
+        public static final int download_progress=0x7f080001;
+        public static final int download_progress_title=0x7f080000;
+        public static final int menu_config=0x7f080008;
+        public static final int menu_request_list=0x7f080007;
+        public static final int request_status=0x7f080006;
+        public static final int request_url=0x7f080005;
+        public static final int rule_title=0x7f080002;
     }
     public static final class layout {
-        public static final int item_row=0x7f030000;
-        public static final int main=0x7f030001;
-        public static final int request_queue_list=0x7f030002;
-        public static final int request_queue_row=0x7f030003;
+        public static final int download_progress=0x7f030000;
+        public static final int item_row=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int request_queue_list=0x7f030003;
+        public static final int request_queue_row=0x7f030004;
     }
     public static final class menu {
-        public static final int main_menu=0x7f060000;
+        public static final int main_menu=0x7f070000;
     }
     public static final class string {
         public static final int app_name=0x7f050001;
         public static final int app_title=0x7f050003;
         public static final int download=0x7f050002;
+        public static final int error_invalid_content_id=0x7f05000f;
         public static final int hello=0x7f050000;
         public static final int menu_config=0x7f050005;
         public static final int menu_request_list=0x7f050004;
@@ -46,7 +50,13 @@ public final class R {
         public static final int request_queue_item_name_sent=0x7f050007;
         public static final int request_queue_item_name_unsent=0x7f050006;
         public static final int request_queue_list_label=0x7f050008;
+        public static final int start_download_content=0x7f05000e;
+        public static final int title_download_error=0x7f050011;
+        public static final int title_download_success=0x7f050010;
         public static final int title_preference=0x7f05000b;
+    }
+    public static final class style {
+        public static final int DownloadProgressTitle=0x7f060000;
     }
     public static final class xml {
         public static final int pref=0x7f040000;

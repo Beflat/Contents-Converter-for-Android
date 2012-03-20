@@ -9,8 +9,15 @@ import net.urban_theory.contents_convert.activity.PreferenceActivity;
 import net.urban_theory.contents_convert.activity.RequestQueueListActivity;
 import net.urban_theory.contents_convert.data.ContentDataLoader;
 import net.urban_theory.contents_convert.entity.Content;
+import net.urban_theory.contents_convert.service.ContentDownloadService;
 import net.urban_theory.contents_convert.util.FileUtil;
 import android.app.ListActivity;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,6 +25,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.RemoteViews;
 import android.widget.Toast;
 
 
@@ -58,6 +66,7 @@ public class Contents_convert_androidActivity extends ListActivity {
         }
         contentListAdapter = new ContentListAdapter(this, contentList);
         setListAdapter(contentListAdapter);
+        
     }
     
     

@@ -31,8 +31,10 @@
         </activity>
         <activity android:name=".activity.RequestQueueListActivity" android:label="@string/request_queue_list_label"></activity>
         <activity android:name=".activity.PreferenceActivity"></activity>
+        <activity android:name=".activity.NotificationActivity"></activity>
         <service android:name=".service.RequestQueuePostService" ></service>
         <service android:name=".service.RetrieveContentListService" ></service>
+        <service android:name=".service.ContentDownloadService" ></service>
     </application>
     
 </manifest>

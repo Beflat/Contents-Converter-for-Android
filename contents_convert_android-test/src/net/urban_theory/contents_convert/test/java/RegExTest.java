@@ -42,4 +42,20 @@ public class RegExTest  extends TestCase {
 //        
 //    }
     
+    
+    public void testFindFileName() {
+        String headerString = "attachment;filename=\"cc_000244.epub\"";
+        Pattern regExPattern = Pattern.compile("filename=\"(.+)\"");
+        Matcher m = regExPattern.matcher(headerString);
+        
+        String fileName = "untitled.epub";
+        if(m.find()) {
+            fileName = m.group(1);
+        }
+
+        Log.d("cc-android", fileName + " <- " + headerString);
+        
+        Assert.assertEquals("cc_000244.epub", fileName);
+    }
+    
 }

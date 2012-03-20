@@ -3,10 +3,11 @@ package net.urban_theory.contents_convert;
 import java.util.List;
 
 import net.urban_theory.contents_convert.entity.Content;
-
+import net.urban_theory.contents_convert.service.ContentDownloadService;
 import android.content.Context;
-import android.content.res.ColorStateList;
+import android.content.Intent;
 import android.graphics.Color;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,6 +50,23 @@ public class ContentListAdapter extends ArrayAdapter<Content> {
             
             Button dlButton = (Button)view.findViewById(R.id.btn_download);
             
+            final int contentId = row.getId();
+            View.OnClickListener onClickListener = new View.OnClickListener() {
+                
+                @Override
+                public void onClick(View v) {
+                    Log.d("cc-android", "Button Clicked.");
+                    Intent intent = new Intent(getContext(), ContentDownloadService.class);
+                    
+                    intent.putExtra("net.urban-theory.content_convert.content_id", contentId);
+                    
+                    v.getContext().startService(intent);
+                }
+            };
+            
+            
+            dlButton.setOnClickListener(onClickListener);
+            
             switch(row.getStatus()) {
             case Content.STATE_INPROCESS:
             case Content.STATE_FAILED:
@@ -70,4 +88,7 @@ public class ContentListAdapter extends ArrayAdapter<Content> {
         
         return view;
     }
+    
+    private View.OnClickListener onDownloadClickListener;
+    
 }
