@@ -67,6 +67,7 @@ public class ContentListAdapter extends ArrayAdapter<Content> {
             
             dlButton.setOnClickListener(onClickListener);
             
+            dlButton.setEnabled(true);
             switch(row.getStatus()) {
             case Content.STATE_INPROCESS:
             case Content.STATE_FAILED:
