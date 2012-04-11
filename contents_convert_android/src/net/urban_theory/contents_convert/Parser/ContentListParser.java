@@ -74,6 +74,7 @@ public class ContentListParser {
         CharSequence status;
         CharSequence title;
         CharSequence rule;
+        CharSequence date;
         Content currentContent = null;
         
         while(event != XmlPullParser.END_DOCUMENT) {
@@ -82,6 +83,7 @@ public class ContentListParser {
                 id = parser.getAttributeValue(null, "id");
                 status = parser.getAttributeValue(null, "status");
                 rule = parser.getAttributeValue(null, "rule");
+                date = parser.getAttributeValue(null, "date");
                 title = parser.nextText();
                 
                 if(id == null) {
@@ -99,6 +101,7 @@ public class ContentListParser {
                 currentContent.setId(Integer.parseInt(id.toString()));
                 currentContent.setStatus(Integer.parseInt(status.toString()));
                 currentContent.setTitle(title);
+                currentContent.setDate(date);
                 currentContent.setRuleName(rule);
                 break;
             case XmlPullParser.END_TAG:

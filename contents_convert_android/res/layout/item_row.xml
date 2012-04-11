@@ -1,43 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="80dp"
-        android:layout_weight="0.70"
-        android:orientation="vertical" >
+        android:layout_width="fill_parent"
+        android:layout_height="30dip"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
 
         <TextView
-            android:id="@+id/rule_title"
+            android:id="@+id/content_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ellipsize="end"
+            android:layout_marginRight="10dip"
+            android:layout_weight="0.3"
             android:lines="1"
-            android:textColor="#cfc"
-            android:textStyle="bold"
-            android:text="" />
+            android:maxLines="1"
+            android:text=""
+            android:textColor="#ddd" />
 
         <TextView
-            android:id="@+id/content_title"
+            android:id="@+id/content_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ellipsize="end"
-            android:lines="2"
-            android:textColor="#efe"
-            android:text="" />
-    </LinearLayout>
+            android:layout_weight="0.7"
+            android:lines="1"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="#ddd" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_download"
-        android:background="@drawable/button_design"
+    <TextView
+        android:id="@+id/rule_title"
         android:layout_width="wrap_content"
-        android:layout_height="60dp"
-        android:layout_gravity="right"
-        android:text="@string/download" />
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:lines="1"
+        android:text=""
+        android:textColor="#cfc"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/content_title"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:lines="2"
+        android:minLines="2"
+        android:maxLines="2"
+        android:inputType="textMultiLine"
+        android:scrollHorizontally="false"
+        android:text=""
+        android:textColor="#efe" />
 
 </LinearLayout>

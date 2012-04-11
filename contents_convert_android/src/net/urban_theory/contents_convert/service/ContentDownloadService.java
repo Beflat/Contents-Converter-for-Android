@@ -48,7 +48,8 @@ public class ContentDownloadService extends IntentService {
         
         Log.d("cc-android", "Passed1");
         
-        String rootDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/ContentsConvert";
+        String externalRoot = getString(R.string.config_external_root);
+        String rootDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + externalRoot;
         
         int contentId = intent.getIntExtra("net.urban-theory.content_convert.content_id", 0);
         if(contentId == 0) {
@@ -57,7 +58,8 @@ public class ContentDownloadService extends IntentService {
             return;
         }
         
-        String url = "http://cc.urban-theory.net/content/download/" + Integer.toString(contentId);
+        String hostName = getString(R.string.config_server_host);
+        String url = "http://" + hostName + "/content/download/" + Integer.toString(contentId);
         
         HttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet(url);

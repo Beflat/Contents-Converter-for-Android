@@ -10,22 +10,19 @@ import net.urban_theory.contents_convert.activity.RequestQueueListActivity;
 import net.urban_theory.contents_convert.data.ContentDataLoader;
 import net.urban_theory.contents_convert.entity.Content;
 import net.urban_theory.contents_convert.service.ContentDownloadService;
+import net.urban_theory.contents_convert.util.ContentFileUtil;
 import net.urban_theory.contents_convert.util.FileUtil;
 import android.app.ListActivity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.PendingIntent;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.widget.RemoteViews;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 
@@ -66,6 +63,7 @@ public class Contents_convert_androidActivity extends ListActivity {
         }
         contentListAdapter = new ContentListAdapter(this, contentList);
         setListAdapter(contentListAdapter);
+        
         
     }
     
@@ -109,6 +107,36 @@ public class Contents_convert_androidActivity extends ListActivity {
         
         return consumed;
     }
+
+
+    @Override
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        
+        Content content = (Content)l.getItemAtPosition(position);
+        int contentId = content.getId();
+        
+        String externalRoot = getString(R.string.config_external_root);
+        String rootDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/" + externalRoot;
+        String contentPath = rootDir + "/" + ContentFileUtil.getContentFileNameFromId(contentId);
+        
+        File file = new File(contentPath);
+        
+        //まだダウンロードしていない場合はダウンロードする
+        if(!file.isFile()) {
+            Intent intent = new Intent(getApplicationContext(), ContentDownloadService.class);
+            intent.putExtra("net.urban-theory.content_convert.content_id", contentId);
+            v.getContext().startService(intent);
+            return;
+        }
+        
+        //ダウンロード済の場合はそのまま開く
+        Intent intent = new Intent();
+        intent.setAction(Intent.ACTION_VIEW);
+        intent.setDataAndType(Uri.fromFile(file), "application/epub+zip");
+        startActivity(intent);
+    }
+    
     
     
 }

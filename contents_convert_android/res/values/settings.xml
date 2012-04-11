@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="config_server_host">cc.urban-theory.net</string>
+    <string name="config_external_root">ContentsConvert</string>
+    
+</resources>

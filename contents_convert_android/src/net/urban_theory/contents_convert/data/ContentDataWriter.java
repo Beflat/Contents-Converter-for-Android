@@ -38,6 +38,7 @@ public class ContentDataWriter {
                 jsonObj.put("id", itemList.get(i).getId());
                 jsonObj.put("title", itemList.get(i).getTitle());
                 jsonObj.put("rule", itemList.get(i).getRuleName());
+                jsonObj.put("date", itemList.get(i).getDate());
                 jsonObj.put("status", itemList.get(i).getStatus());
                 
                 jsonArray.put(jsonObj);

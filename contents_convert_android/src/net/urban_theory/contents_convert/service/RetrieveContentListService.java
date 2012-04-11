@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import net.urban_theory.contents_convert.ContentListLoadHandler;
+import net.urban_theory.contents_convert.R;
 import net.urban_theory.contents_convert.Parser.ContentListParser;
 import net.urban_theory.contents_convert.data.ContentDataWriter;
 import net.urban_theory.contents_convert.entity.Content;
@@ -63,8 +64,11 @@ public class RetrieveContentListService extends IntentService {
 
     
     private ArrayList<Content> getContentList() throws ClientProtocolException, IOException, UnsupportedEncodingException, XmlPullParserException {
+        
+        String hostName = getString(R.string.config_server_host);
+        
         ContentListLoadHandler handler = new ContentListLoadHandler();
-        URL url = new URL("http://cc.urban-theory.net/api/content/get");
+        URL url = new URL("http://" + hostName + "/api/content/get");
         InputStream is = url.openConnection().getInputStream();
         
         ContentListParser parser = new ContentListParser();

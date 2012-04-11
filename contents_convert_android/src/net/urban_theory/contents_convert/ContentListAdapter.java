@@ -20,7 +20,9 @@ public class ContentListAdapter extends ArrayAdapter<Content> {
     private LayoutInflater inflater;
     private TextView titleLabel;
     private TextView ruleLabel;
-    private Button downloadButton;
+    private TextView contentIdLabel;
+    private TextView contentDateLabel;
+//    private Button downloadButton;
     
     
     public ContentListAdapter(Context context, List<Content> objects) {
@@ -48,30 +50,38 @@ public class ContentListAdapter extends ArrayAdapter<Content> {
             ruleLabel = (TextView)view.findViewById(R.id.rule_title);
             ruleLabel.setText(row.getRuleName());
             
-            Button dlButton = (Button)view.findViewById(R.id.btn_download);
+            contentIdLabel = (TextView)view.findViewById(R.id.content_id);
+            contentIdLabel.setText("ID: " + Integer.toString(row.getId()));
             
-            final int contentId = row.getId();
-            View.OnClickListener onClickListener = new View.OnClickListener() {
-                
-                @Override
-                public void onClick(View v) {
-                    Log.d("cc-android", "Button Clicked.");
-                    Intent intent = new Intent(getContext(), ContentDownloadService.class);
-                    
-                    intent.putExtra("net.urban-theory.content_convert.content_id", contentId);
-                    
-                    v.getContext().startService(intent);
-                }
-            };
+            contentDateLabel = (TextView)view.findViewById(R.id.content_date);
+            contentDateLabel.setText("Date: " + row.getDate());
             
+//            Button dlButton = (Button)view.findViewById(R.id.btn_download);
+//            
+//            final int contentId = row.getId();
+//            View.OnClickListener onClickListener = new View.OnClickListener() {
+//                
+//                @Override
+//                public void onClick(View v) {
+//                    Intent intent = new Intent(getContext(), ContentDownloadService.class);
+//                    
+//                    intent.putExtra("net.urban-theory.content_convert.content_id", contentId);
+//                    
+//                    v.getContext().startService(intent);
+//                }
+//            };
+//            
+//            
+//            dlButton.setOnClickListener(onClickListener);
             
-            dlButton.setOnClickListener(onClickListener);
-            
-            dlButton.setEnabled(true);
+            titleLabel.setTextColor(Color.rgb(0xFF, 0xFF, 0xFF));
+//            dlButton.setEnabled(true);
+            view.setEnabled(true);
             switch(row.getStatus()) {
             case Content.STATE_INPROCESS:
             case Content.STATE_FAILED:
-                dlButton.setEnabled(false);
+//                dlButton.setEnabled(false);
+                view.setEnabled(false);
                 break;
                 
             case Content.STATE_DOWNLOADED:
@@ -81,7 +91,7 @@ public class ContentListAdapter extends ArrayAdapter<Content> {
                 
             case Content.STATE_READ:
                 //dlButton.setBackgroundColor(Color.rgb(0x66, 0x66, 0x66));
-                titleLabel.setTextColor(Color.rgb(0xdd, 0xdd, 0xdd));
+                titleLabel.setTextColor(Color.rgb(0x44, 0x44, 0x44));
                 break;
             }
             

@@ -44,7 +44,7 @@ public class ContentDataLoader {
             for(int i=0; i < arrayLength; i++) {
                 JSONObject jsonObj = requestArray.getJSONObject(i);
                 
-                if(!jsonObj.has("id") || !jsonObj.has("title") || !jsonObj.has("rule") || !jsonObj.has("status")) {
+                if(!jsonObj.has("id") || !jsonObj.has("title") || !jsonObj.has("rule") || !jsonObj.has("status") || !jsonObj.has("date")) {
                     continue;
                 }
                 
@@ -53,6 +53,7 @@ public class ContentDataLoader {
                 item.setTitle(jsonObj.getString("title"));
                 item.setRuleName(jsonObj.getString("rule"));
                 item.setStatus(jsonObj.getInt("status"));
+                item.setDate(jsonObj.getString("date"));
                 
                 itemList.add(item);
             }

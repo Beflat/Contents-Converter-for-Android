@@ -5,6 +5,7 @@ public class Content {
     private int id;
     private CharSequence title;
     private CharSequence ruleName;
+    private CharSequence date;
     private int status;
 
     public static final int STATE_INPROCESS  =  0;
@@ -17,6 +18,7 @@ public class Content {
         title = "";
         ruleName = "";
         status = 0;
+        date = "";
     }
 
     public int getId() {
@@ -39,6 +41,16 @@ public class Content {
     public void setStatus(int newStatus) {
         status = newStatus;
     }
+    
+    
+    public void setDate(CharSequence newDate) {
+        date = newDate;
+    }
+    
+    public CharSequence getDate() {
+        return date;
+    }
+    
     
     public void setId(int newId) {
         id = newId;
