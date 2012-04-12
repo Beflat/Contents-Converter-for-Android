@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:orientation="vertical" >
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="30dip"
-        android:layout_weight="1"
+        android:layout_height="fill_parent"
+        android:layout_weight="0.00"
         android:orientation="horizontal" >
 
         <TextView
@@ -33,28 +33,28 @@
             android:textColor="#ddd" />
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/rule_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ellipsize="end"
-        android:lines="1"
-        android:text=""
-        android:textColor="#cfc"
-        android:textStyle="bold" />
+        <TextView
+            android:id="@+id/rule_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text=""
+            android:textColor="#cfc"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/content_title"
-        android:layout_width="fill_parent"
-        android:layout_height="40dp"
-        android:layout_weight="1"
-        android:ellipsize="end"
-        android:lines="2"
-        android:minLines="2"
-        android:maxLines="2"
-        android:inputType="textMultiLine"
-        android:scrollHorizontally="false"
-        android:text=""
-        android:textColor="#efe" />
-
+        <TextView
+            android:id="@+id/content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:scrollHorizontally="false"
+            android:lines="2"
+            android:maxLines="2"
+            android:minLines="2"
+            
+            android:text=""
+            android:textColor="#efe" />
+        
 </LinearLayout>
